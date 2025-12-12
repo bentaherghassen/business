@@ -1,0 +1,78 @@
+/* Fonts  */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+
+/* Custom Style */
+
+body {
+        background: url('.dist/images/background/bg-img-1.jpg') no-repeat center center fixed;
+        background-size: cover;
+        background-color: #000;
+            /* fallback color */
+        font-family: 'Ubuntu', sans-serif;
+        
+        padding-top: 100px;
+        color: white;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    }
+
+    /* Shake Animation */
+
+        /* 1. Define the Shake Keyframes */
+        @keyframes shake {
+    
+            /* The animation will quickly shift the element horizontally */
+            0% {
+                transform: translateX(0);
+            }
+    
+            20% {
+                transform: translateX(-5px);
+            }
+    
+            40% {
+                transform: translateX(5px);
+            }
+    
+            60% {
+                transform: translateX(-5px);
+            }
+    
+            80% {
+                transform: translateX(5px);
+            }
+    
+            100% {
+                transform: translateX(0);
+            }
+        }
+    
+        /* 2. Style the Headline (Optional but good practice) */
+        .shaking-headline ,code{
+            display: inline-block;
+            /* Essential: Allows transform to work properly */
+            padding: 10px;
+            font-family: 'Ubuntu', sans-serif;
+            color: #333;
+            font-size: 2em;
+            /* Optional: Add a transition for smooth entry/exit, though shake is usually abrupt */
+            transition: transform 0.1s ease-in-out;
+        }
+    
+        /* 3. Apply the Animation on Hover */
+        .shaking-headline:hover {
+            /* Apply the 'shake' animation */
+            animation-name: shake;
+    
+            /* Duration of the entire shake cycle */
+            animation-duration: 0.5s;
+    
+            /* Number of times the shake repeats. 'infinite' would shake forever. */
+            animation-iteration-count: 1;
+    
+            /* Timing function for the animation */
+            animation-timing-function: ease-in-out;
+        }
